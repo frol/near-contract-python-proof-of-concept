@@ -1,0 +1,30 @@
+[package]
+name = "pycontract"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+near-sys = "0.2.1"
+#rustpython = { git = "https://github.com/RustPython/RustPython", version = "0.3.0", default-features = false, features = ["freeze-stdlib"] }
+#rustpython-vm = { git = "https://github.com/RustPython/RustPython", version = "0.3.0" } #, features = ["freeze-stdlib"] }
+rustpython-vm = { git = "https://github.com/demergent-labs/RustPython" } #, features = ["freeze-stdlib"] }
+wee_alloc = "0.4.5"
+
+[dev-dependencies]
+near-workspaces = { version = "0.10.0", features = ["unstable"] }
+tokio = { version = "1.12.0", features = ["full"] }
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[profile.release]
+codegen-units = 1
+# Tell `rustc` to optimize for small code size.
+opt-level = "z"
+lto = true
+debug = false
+panic = "abort"
+# Opt into extra safety checks on arithmetic operations https://stackoverflow.com/a/64136471/249801
+#overflow-checks = true
