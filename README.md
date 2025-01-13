@@ -18,3 +18,14 @@ Next steps are:
 
 1. further tweak RustPython to avoid remaining `__wbindgen_*` imports (see WAT output to see that the current contract tries to import those host methods that are not available, so it won't get executed in NEAR)
 2. run a localnet (e.g. with near-workspaces) to get it tested to potentially push NEAR Protocol changes to increase the limits.
+
+## License
+
+Licensed under either of
+
+* Apache License, Version 2.0
+   ([LICENSE-APACHE](LICENSE-APACHE) or <http://www.apache.org/licenses/LICENSE-2.0>)
+* MIT license
+   ([LICENSE-MIT](LICENSE-MIT) or <http://opensource.org/licenses/MIT>)
+
+at your option.
