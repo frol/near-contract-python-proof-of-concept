@@ -7,7 +7,7 @@ Here is how to compile it:
 cargo build --target wasm32-unknown-unknown --release
 ```
 
-NEAR mainnet and testnet has a limit of 4.1MB for the [contract size and transaction size](https://github.com/near/nearcore/blob/master/utils/mainnet-res/res/mainnet_genesis.json#L196-L198), but the resulting binary I got is 9.1MB, so I tried to strip it:
+NEAR mainnet and testnet has a limit of 1.5MB for the [contract size and transaction size](https://github.com/near/nearcore/blob/master/utils/mainnet-res/res/mainnet_genesis.json#L196-L198), but the resulting binary I got is 9.1MB, so I tried to strip it:
 
 ```sh
 wasm-opt -Oz --strip --vacuum target/wasm32-unknown-unknown/release/pycontract.wasm -o pycontract.wasm
